@@ -1,0 +1,34 @@
+ <div class="wrapper" ng-controller="SimonController" >
+    
+ 
+    
+    <span sound="movement"></span>
+   
+      <div class="game-board">
+        <div class="simon" >
+          <ul>
+            <li ng-class="movement == 'red' ? 'tile red lit' : 'tile red'" ng-click="AddUserMovement('red')" ></li>
+            <li ng-class="movement == 'blue' ? 'tile blue lit' : 'tile blue'" ng-click="AddUserMovement('blue')"></li>
+            <li ng-class="movement == 'yellow' ? 'tile yellow lit' : 'tile yellow'"  ng-click="AddUserMovement('yellow')"></li>
+            <li ng-class="movement == 'green' ? 'tile green lit' : 'tile green'" ng-click="AddUserMovement('green')"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="game-info">
+        <h2 ng-if="Round > 0">Round:           <span ng-bind="Round">0</span>
+        </h2>
+        <button ng-click="StartGame()" ng-if="Round == 0">Start</button>
+
+        <button ng-click="StartGame()" ng-if="GameFinished">Restart</button>
+        <p ng-if="GameFinished">Sorry, you lost after           <span ng-bind="Round"></span>
+ rounds!</p>
+
+  <p  ng-if="AnimationInProgress == false && GameFinished == false">Your turn</p>
+  <p  ng-if="AnimationInProgress == true && GameFinished == false">Simon turn</p>
+      </div>
+      
+     
+      
+      
+     
+    </div>
