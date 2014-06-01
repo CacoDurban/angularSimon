@@ -60,14 +60,13 @@ angular.module('myApp.controllers', [])
 
             $scope.StartAnimation = function () {
                 $scope.AnimationInProgress = true;
-                var i = $scope.GameMovements.length;
-                var k = 0;
-
-                var ticker = function () {
-                    if (k == i)
+                var GameMovementsLength = $scope.GameMovements.length;
+                var position = 0;
+					var ticker = function () {
+                    if (position == GameMovementsLength)
                         $scope.AnimationInProgress = false;
-                    if (k < i) {
-                        $scope.movement = $scope.GameMovements[k];
+                    if (position < GameMovementsLength) {
+                        $scope.movement = $scope.GameMovements[position];
                         $timeout(function () {
                             $scope.movement = "";
                             $timeout(ticker, $scope.Level)
@@ -77,7 +76,7 @@ angular.module('myApp.controllers', [])
                         if ($scope.Level > 200)
                             $scope.Level -= 100;
                     }
-                    k++;
+                    position++;
                 };
                 $timeout(ticker, $scope.Level)
             }

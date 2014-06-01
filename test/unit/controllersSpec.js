@@ -99,6 +99,7 @@ describe('controllers', function(){
     
 
      scope.ValidMovements(scope.GameMovements,scope.UserMovements);
+    
      expect(scope.Round).toBe(1)
      
    });
