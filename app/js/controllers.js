@@ -51,10 +51,10 @@ angular.module('myApp.controllers', [])
                     }
                 }
                 if (validMovements && gameMovements.length == userMovements.length) {
+                    $scope.Round += 1;
                     $scope.AddGameMovement();
                     $scope.StartAnimation();
                     $scope.UserMovements = [];
-                    $scope.Round += 1;
                 }
             }
 

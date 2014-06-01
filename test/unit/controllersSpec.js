@@ -91,15 +91,17 @@ describe('controllers', function(){
   it('Al finalizar la secuencia, se añade se incrementa la dificultad', function($controller) {
     
 
+
      scope.GameMovements.push("green");
      scope.GameMovements.push("red");
 
      scope.UserMovements.push("green");
      scope.UserMovements.push("red");
     
-
      scope.ValidMovements(scope.GameMovements,scope.UserMovements);
-    
+   
+
+     expect(scope.UserMovements.length).toBe(0)
      expect(scope.Round).toBe(1)
      
    });
